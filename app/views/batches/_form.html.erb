@@ -1,0 +1,12 @@
+<%= simple_form_for(@batch) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <%= f.input :name %>
+      <%= f.input :course_id, collection: Course.all, prompt: 'Please Select course', input_html: { class: 'form-control' }  %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+    </div>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary btn-fill' %>
+<% end %>

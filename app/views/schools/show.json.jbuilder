@@ -1,0 +1,1 @@
+json.partial! "schools/school", classroom: @school

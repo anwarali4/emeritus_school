@@ -1,0 +1,51 @@
+<% if notice.present? %>
+  <div class="alert alert-info" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Enrollment</h4>
+      <hr/>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>Student</th>
+              <td>
+                <%= @enrollment.student.name %>
+              </td>
+            </tr>
+            <tr>
+              <th>Batch</th>
+              <td>
+                <%= @enrollment.batch.name %>
+              </td>
+            </tr>
+             <tr>
+              <th>Course</th>
+              <td>
+                <% binding.pry %>
+                <%= @enrollment.batch.course.name %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <%= link_to enrollments_path, class: 'btn btn-default' do %>
+        <i class="fa fa-chevron-left"></i>
+        Back
+      <% end %>
+      <%= link_to edit_enrollment_path(@enrollment), class: 'btn btn-primary btn-fill' do %>
+        <i class="fa fa-edit"></i>
+        Edit
+      <% end %>
+    </div>
+    <br/>
+  </div>
+</div>

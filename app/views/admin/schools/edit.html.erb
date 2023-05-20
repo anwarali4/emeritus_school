@@ -1,0 +1,47 @@
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Edit School & school Admin detail</h4>
+      <hr/>
+    </div>
+    <div class="content">
+      <%= simple_form_for(@school, url: admin_schools_path, method: "patch") do |f| %>
+        <%= f.error_notification %>
+        <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <%= f.input :name, label: 'School Name', required: true %>
+            <h3>School Admin Details</h3>
+            <%= f.simple_fields_for :school_admin do |sa| %>
+              <%= sa.input :email, required: true, autofocus: true %>
+              <%= sa.input :name, required: true, autofocus: true %>
+              <%= sa.input :gender, collection: User::GENDER, prompt: 'Please Select Gender', input_html: { class: 'form-control' } %>
+              <%= sa.input :phone, required: true, autofocus: true %>
+            <% end %>
+            <h3>School Address Details</h3>
+            <%= f.simple_fields_for :address do |add| %>
+              <%= add.input :line_1, required: true, autofocus: true %>
+              <%= add.input :line_2,  autofocus: true %>
+              <%= add.input :city, required: true, autofocus: true %>
+              <%= add.input :state, required: true, autofocus: true %>
+              <%#= add.input :country, required: true, autofocus: true %>
+              <%= add.input :pincode, required: true, autofocus: true %>
+            <% end %>
+          </div>
+        </div>
+        <%= f.button :submit, class: 'btn btn-primary btn-fill' %>
+      <% end %>
+    </div>
+    <hr/>
+    <div class="footer">
+      <%= link_to admin_schools_path, class: 'btn btn-default' do %>
+        <i class="fa fa-chevron-left"></i>
+        Back
+      <% end %>
+      <%= link_to admin_school_path(@school), class: 'btn btn-info btn-fill' do %>
+        <i class="fa fa-eye"></i>
+        Show
+      <% end %>
+    </div>
+    <br/>
+  </div>
+</div>

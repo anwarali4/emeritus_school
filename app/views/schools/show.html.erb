@@ -1,0 +1,115 @@
+<% if notice.present? %>
+  <div class="alert alert-info" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">School Details</h4>
+      <hr/>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>School Name</th>
+              <td>
+                <%= @school.name %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <h3> School Admin Detail </h3>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>Name</th>
+              <td>
+                <%= @school.school_admin.name %>
+              </td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td>
+                <%= @school.school_admin.email %>
+              </td>
+            </tr>
+            <tr>
+              <th>Gender:</th>
+              <td>
+                <%= @school.school_admin.gender %>
+              </td>
+            </tr>
+            <tr>
+              <th>Phone:</th>
+              <td>
+                <%= @school.school_admin.phone %>
+              </td>
+            </tr>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <h3> School Address </h3>
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>Line 1</th>
+              <td>
+                <%= @school.address.line_1 %>
+              </td>
+            </tr>
+            <tr>
+              <th>Line 2</th>
+              <td>
+                <%= @school.address.line_2 %>
+              </td>
+            </tr>
+            <tr>
+              <th>City:</th>
+              <td>
+                <%= @school.address.city %>
+              </td>
+            </tr>
+            <tr>
+              <th>State:</th>
+              <td>
+                <%= @school.address.state %>
+              </td>
+            </tr>
+            <tr>
+              <th>Country:</th>
+              <td>
+                <%= @school.address.country %>
+              </td>
+            </tr>
+            <tr>
+              <th>Pincode:</th>
+              <td>
+                <%= @school.address.pincode %>
+              </td>
+            </tr>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <%= link_to schools_path, class: 'btn btn-default' do %>
+        <i class="fa fa-chevron-left"></i>
+        Back
+      <% end %>
+      <%= link_to edit_school_path(@school), class: 'btn btn-primary btn-fill' do %>
+        <i class="fa fa-edit"></i>
+        Edit
+      <% end %>
+    </div>
+    <br/>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+# School Management System
+
+This system is the open-source application which was developed by using [Ruby On Rails](http://rubyonrails.org) Framework. It can apply to anykind of school, batch and courses. There is enterprise version for your school if you want further customization by contacting me via email: anwar17ali@gmail.com
+
+## Getting Started
+
+[Ruby On Rails](http://rubyonrails.org) is web development framework which has the giant cummunity in the world. Let's start install some prerequisites before running project.
+
+### Prerequisites
+
+Install Ruby Programming
+
+```
+sudo apt-get install ruby-full
+```
+
+Install Bundler
+
+```
+gem install bundler
+```
+
+Install Rails
+
+```
+gem install rails
+```
+
+Install PostgresSQL and Create Owner Database
+
+```
+sudo apt-get install postgresql postgresql-contrib libpq-dev
+sudo -u postgres createuser $USER
+```
+
+### Installing
+
+Before running the project, you have to run some command to install third library gems which are from [RubyGems](https://rubygems.org), and create database.
+
+Install Third Party Library Gems
+```
+bundle install
+```
+
+Create Database and Tables
+```
+rails db:migrate
+```
+
+rails db:seed
+```
+
+***Congratulation!*** Now you are ready to run the School Management System!
+
+## Running the tests
+
+Running or hosting the system by this command:
+```
+rails s
+```
+
+## Versioning
+
+The School Management System's version is ***1.0.9***
+
+## Admin
+
+ -Admin create a school and school Admin.
+ -update the school and school admin detail.
+ -Manage the students
+
+## School Admin
+ - SchoolAdmins can update information about the school
+ - SchoolAdmins are responsible for creating courses
+ - SchoolAdmins are responsible for creating batches
+ - SchoolAdmins are responsible for adding students to batches
+ - They can also approve or deny enrolment requests made by students
+
+
+## student
+ - Students can raise a request to enrol in a batch.
+ - Students from the same batch can see their classmates and their progress
+
+

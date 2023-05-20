@@ -1,0 +1,55 @@
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">
+        <i class="pe-7s-ribbon"></i>
+        Listing Courses
+      </h4>
+      <hr/>
+      <%= link_to new_course_path, class: 'btn btn-primary btn-fill' do %>
+        <i class="fa fa-plus-square"></i>
+        New Course
+      <% end %>
+      <br/>
+      <br/>
+    </div>
+    <div class="content table-responsive table-full-width">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @courses.each do |course| %>
+            <tr>
+              <td>
+                <%= course.name %>
+              </td>
+              <td>
+                <%= course.description %>
+              </td>
+              <td>
+                <%= link_to course, class: 'btn btn-info btn-sm' do %>
+                  <i class="fa fa-eye"></i>
+                  Show
+                <% end %>
+                <%= link_to edit_course_path(course), class: 'btn btn-primary btn-sm' do %>
+                  <i class="fa fa-edit"></i>
+                  Edit
+                <% end %>
+                <%= link_to course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' do %>
+                  <i class="fa fa-trash"></i>
+                  Delete
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <br/>
+  </div>
+</div>

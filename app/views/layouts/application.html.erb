@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="School Management" name="description"/>
+    <title>School Management</title>
+    <script defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkSX4YNQLqzBJPKdQKuESstJxUGFK7Jg8"></script>
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body id="<%= controller_name %>_<%= params[:action] %>">
+    <div class="wrapper">
+      <%= render 'partials/sidebar' %>
+      <div class="main-panel">
+        <%= render 'partials/topnav' %>
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

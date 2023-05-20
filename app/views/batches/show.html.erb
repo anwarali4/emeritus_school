@@ -1,0 +1,50 @@
+<% if notice.present? %>
+  <div class="alert alert-info" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Batch</h4>
+      <hr/>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>Name</th>
+              <td>
+                <%= @batch.name %>
+              </td>
+            </tr>
+            <tr>
+              <th>Start Date</th>
+              <td>
+                <%= @batch.start_date %>
+              </td>
+            </tr>
+            <tr>
+              <th>End Date</th>
+              <td>
+                <%= @batch.end_date %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <%= link_to batches_path, class: 'btn btn-default' do %>
+        <i class="fa fa-chevron-left"></i>
+        Back
+      <% end %>
+      <%= link_to edit_batch_path(@batch), class: 'btn btn-primary btn-fill' do %>
+        <i class="fa fa-edit"></i>
+        Edit
+      <% end %>
+    </div>
+    <br/>
+  </div>
+</div>

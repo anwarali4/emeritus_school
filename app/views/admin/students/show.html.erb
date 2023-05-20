@@ -1,0 +1,56 @@
+<% if notice.present? %>
+  <div class="alert alert-info" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+<div class="col-xs-12 col md-12">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Student</h4>
+      <hr/>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <table class="table">
+            <tr>
+              <th>Name:</th>
+              <td>
+                <%= @student.name %>
+              </td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td>
+                <%= @student.email %>
+              </td>
+            </tr>
+            <tr>
+              <th>Phone:</th>
+              <td>
+                <%= @student.phone %>
+              </td>
+            </tr>
+            <tr>
+              <th>Gender:</th>
+              <td>
+                <%= @student.gender %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <%= link_to admin_students_path, class: 'btn btn-default' do %>
+        <i class="fa fa-chevron-left"></i>
+        Back
+      <% end %>
+      <%= link_to edit_admin_student_path(@student), class: 'btn btn-primary btn-fill' do %>
+        <i class="fa fa-edit"></i>
+        Edit
+      <% end %>
+    </div>
+    <br/>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="sidebar" data-color="blue" data-image="/img/sidebar-4.jpg">
+  <div class="sidebar-wrapper">
+    <div class="logo">
+      <a class="simple-text" href="http://www.facebook.com/vandy.sodanhean">
+        School Management
+      </a>
+    </div>
+    <ul class="nav">
+      <li class="<%= active('dashboard') %>">
+        <a href="dashboard.html">
+          <i class="pe-7s-graph"></i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <% if current_user.admin? %>
+        <li class="<%= active('schools') %>">
+          <%= link_to admin_schools_path do %>
+            <i class="pe-7s-culture"></i>
+            <p>Schools & SchoolAdmins</p>
+          <% end %>
+        </li>
+
+        <li class="<%= active('students') %>">
+          <%= link_to admin_students_path do %>
+            <i class="pe-7s-study"></i>
+            <p>Students</p>
+          <% end %>
+        </li>
+      <% end %>
+      
+      <% if current_user.schooladmin? %>
+        <li class="<%= active('courses') %>">
+          <%= link_to courses_path do %>
+            <i class="pe-7s-ribbon"></i>
+            <p>Courses</p>
+          <% end %>
+        </li> 
+        <li class="<%= active('batches') %>">
+          <%= link_to batches_path do %>
+            <i class="pe-7s-note2"></i>
+            <p>Batch</p>
+          <% end %>
+        </li>
+        <li class="<%= active('enrollments') %>">
+          <%= link_to enrollments_path do %>
+            <i class="pe-7s-note2"></i>
+            <p>Enrolment requests</p>
+          <% end %>
+        </li>
+      <% end %>
+      <% if current_user.student? %>
+        <li>
+          <%= link_to student_enrollments_path do %>
+            <i class="pe-7s-note2"></i>
+            <p>Batch</p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

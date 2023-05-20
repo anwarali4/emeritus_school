@@ -1,0 +1,11 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <%= f.input :name, required: true, autofocus: true %>
+      <%= f.input :gender, collection: User::GENDER, prompt: 'Please Select Gender', input_html: { class: 'form-control' } %>
+      <%= f.input :phone, required: true, autofocus: true %>
+    </div>
+  </div>
+  <%= f.button :submit, class: 'btn btn-primary btn-fill' %>
+<% end %>
