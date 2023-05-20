@@ -25,7 +25,6 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = current_school.courses.new(course_params)
-    binding.pry
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
